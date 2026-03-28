@@ -4,4 +4,5 @@ __pycache__/
 *.pyc
 cfb_tendency_analyzer/cache/*.json
 cfb_tendency_analyzer/.streamlit/secrets.toml
+.streamlit/secrets.toml
 .DS_Store

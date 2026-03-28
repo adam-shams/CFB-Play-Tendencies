@@ -2,8 +2,8 @@
 
 import os
 
-# Path to local JSON cache directory (relative to project root)
-CACHE_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "cache")
+# /tmp/cfb_cache works on macOS, Linux, and Streamlit Cloud
+CACHE_DIR = "/tmp/cfb_cache"
 
 P5_CONFERENCES = ["ACC", "B12", "B1G", "SEC", "PAC"]
 
