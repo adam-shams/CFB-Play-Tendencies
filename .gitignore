@@ -1,0 +1,7 @@
+.venv/
+myenv/
+__pycache__/
+*.pyc
+cfb_tendency_analyzer/cache/*.json
+cfb_tendency_analyzer/.streamlit/secrets.toml
+.DS_Store
