@@ -57,7 +57,10 @@ def render_sidebar():
     st.sidebar.title("🏈 CFB Tendency Analyzer")
 
     # CFBD API token — auto-fill from Streamlit secrets if available
-    default_cfb_token = st.secrets.get("CFB_API_TOKEN", "") if hasattr(st, "secrets") else ""
+    try:
+        default_cfb_token = st.secrets["CFB_API_TOKEN"]
+    except (FileNotFoundError, KeyError):
+        default_cfb_token = ""
     api_token = st.sidebar.text_input(
         "CFBD API Token",
         value=default_cfb_token,
@@ -134,7 +137,10 @@ def render_sidebar():
         llm_backend = st.selectbox("Backend", options=["Groq (cloud, free)", "Ollama (local)"])
         llm_backend_key = "groq" if "Groq" in llm_backend else "ollama"
         if llm_backend_key == "groq":
-            default_groq_key = st.secrets.get("GROQ_API_KEY", "") if hasattr(st, "secrets") else ""
+            try:
+                default_groq_key = st.secrets["GROQ_API_KEY"]
+            except (FileNotFoundError, KeyError):
+                default_groq_key = ""
             groq_key = st.text_input("Groq API Key", value=default_groq_key, type="password", help="Free key from console.groq.com")
             llm_model = st.text_input("Model", value="llama-3.1-8b-instant")
             ollama_host = ""

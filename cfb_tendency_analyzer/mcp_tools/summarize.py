@@ -66,7 +66,7 @@ def _call_groq(system_msg: str, prompt: str, api_key: str | None, model: str) ->
         # Try Streamlit secrets
         try:
             import streamlit as st
-            key = st.secrets.get("GROQ_API_KEY", "")
+            key = st.secrets["GROQ_API_KEY"]
         except Exception:
             pass
     if not key:
