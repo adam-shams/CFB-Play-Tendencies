@@ -26,11 +26,11 @@ SCORE_BUCKETS: dict[str, tuple[int, int]] = {
 # Field zone buckets based on yards_to_goal
 # yards_to_goal: 99 = own 1-yard line, 1 = opponent 1-yard line
 FIELD_ZONES: dict[str, tuple[int, int]] = {
-    "Own Red Zone (backed up)": (76, 99),
-    "Own Territory":            (51, 75),
-    "Midfield":                 (40, 50),
-    "Opponent Territory":       (21, 39),
-    "Opponent Red Zone":        ( 0, 20),
+    "Pinned Deep (Own 1-24)":       (76, 99),
+    "Own Territory (Own 25-49)":    (51, 75),
+    "Midfield":                     (40, 50),
+    "Opp Territory (Opp 21-39)":    (21, 39),
+    "Red Zone (Inside Opp 20)":     ( 0, 20),
 }
 
 # Distance-to-first-down buckets
